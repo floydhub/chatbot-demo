@@ -8,6 +8,7 @@ import routes from './routes';
 import configureStore from './store/store';
 import DevTools from './containers/DevTools';
 
+import 'static/styles/bootstrap-paper/bootstrap_paper.css';
 import './index.css';
 
 const initialState = {

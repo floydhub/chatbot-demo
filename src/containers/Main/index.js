@@ -2,7 +2,6 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
 import './style.css';
-import 'static/styles/bootstrap-paper/bootstrap_paper.css';
 
 const propTypes = {
 };
