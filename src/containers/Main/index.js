@@ -1,6 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
+import './style.css';
+import 'static/styles/bootstrap-paper/bootstrap_paper.css';
+
 const propTypes = {
 };
 
@@ -15,7 +18,7 @@ class Main extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{height:'100%', width:'100%'}}>
         Inside Main Component
       </div>
     );

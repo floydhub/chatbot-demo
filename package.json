@@ -70,6 +70,9 @@
   },
   "dependencies": {
     "babel-runtime": "^6.20.0",
+    "bootstrap": "^3.3.7",
+    "bootstrap-sass": "^3.3.7",
+    "chat-template": "0.0.22",
     "classnames": "^2.2.5",
     "codemirror": "^5.22.0",
     "isomorphic-fetch": "^2.2.1",
@@ -77,6 +80,7 @@
     "lodash": "^4.17.4",
     "normalize.css": "^5.0.0",
     "react": "^15.4.2",
+    "react-bootstrap": "^0.30.7",
     "react-codemirror": "^0.3.0",
     "react-dom": "^15.4.2",
     "react-icons": "^2.2.3",

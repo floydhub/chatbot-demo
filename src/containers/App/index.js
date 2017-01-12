@@ -20,12 +20,8 @@ class App extends Component {
     const { children } = this.props;
 
     return (
-      <div className="">
-      
-        <div className="">
-          {React.cloneElement(children)}
-        </div>
-
+      <div style={{height:'100%', width:'100%'}}>
+        {React.cloneElement(children)}
       </div>
     );
   }
