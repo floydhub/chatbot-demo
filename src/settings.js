@@ -1,1 +1,1 @@
-export const API_ROOT = 'http://127.0.0.1:8080/api/v1/';
+export const API_ROOT = 'https://beta.floydhub.com/flight/';

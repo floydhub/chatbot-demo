@@ -1,11 +1,26 @@
+import shortid from 'shortid';
+
 import { search } from './commons';
+import { users } from 'utils/constants';
 
 export const prefix = 'MAIN'; // Prefix for common action types
-export const endpoint = 'xxxxx/'; // Endpoint for REST API requests
+export const endpoint = 'chat2'; // Endpoint for REST API requests
 
-export function fetch(query, storeQuery=true) {
+export function fetch(query, storeQuery) {
   return (dispatch) => {
-    return search(query, prefix, endpoint, dispatch, storeQuery);
+    if (storeQuery) {
+      dispatch({
+        type: 'STORE_USER_CHAT',
+        payload: {
+          id: shortid.generate(),
+          message: query,
+          from: users.USER,
+          time: Date.now(),
+        }
+      });
+    }
+
+    return search(query, prefix, endpoint, dispatch, {input: query});
   };
 }
 

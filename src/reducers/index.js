@@ -5,7 +5,7 @@ import { reducer as formReducer } from 'redux-form';
 import mainReducer from './main';
 
 const rootReducer = combineReducers({
-  data: mainReducer,
+  chats: mainReducer,
   routing: routerReducer,
   form: formReducer,
 });

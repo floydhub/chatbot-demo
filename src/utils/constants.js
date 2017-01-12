@@ -4,3 +4,8 @@ export const httpresponses = {
   TEXT: 'text_resp',
   FORM: 'form_resp',
 }
+
+export const users = {
+  USER: 'user',
+  BOT: 'bot',
+};

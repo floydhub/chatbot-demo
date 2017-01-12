@@ -75,7 +75,7 @@ export function fetch(meta, prefix, endpoint, params, dispatch) {
 
 // Search the given endpoint using searchTerm as URL param
 // Used for search results for Modules, Containers and Experiments
-export function search(searchTerm, prefix, endpoint, dispatch, storeQuery=true, params={}) {
+export function search(searchTerm, prefix, endpoint, dispatch, params={}) {
   return dispatch(get(prefix, endpoint, params));
 }
 
