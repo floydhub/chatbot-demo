@@ -5,7 +5,6 @@ RUN apt-get update
 RUN apt-get install -y vim curl
 
 RUN npm install -g pushstate-server
-COPY ./build /floyd-web
-COPY run.sh /run.sh
+COPY ./build /demo
 
-CMD ["./run.sh"]
+CMD ["pushstate-server", "/demo", "80"]
