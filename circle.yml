@@ -1,0 +1,19 @@
+machine:
+  services:
+    - docker
+  node:
+    version: 4.5.0
+test:
+  post:
+    - npm run build
+    - docker build -t floyd-on.azurecr.io/chatbot-demo:$CIRCLE_BUILD_NUM .
+    - docker run -d -p 80:80 floyd-on.azurecr.io/chatbot-demo:$CIRCLE_BUILD_NUM
+    - curl --retry 10 --retry-delay 3 http://127.0.0.1
+deployment:
+  dockerhub:
+    branch: master
+    commands:
+      - docker login -e floydhub@gmail.com -u ${AZURE_REGISTRY_USER} -p ${AZURE_REGISTRY_PASSWORD}
+      - docker push floyd-on.azurecr.io/chatbot-demo:$CIRCLE_BUILD_NUM
+      - docker tag floyd-on.azurecr.io/chatbot-demo:$CIRCLE_BUILD_NUM floyd-on.azurecr.io/floyd-web:latest
+      - docker push floyd-on.azurecr.io/chatbot-demo:latest
