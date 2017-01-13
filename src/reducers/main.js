@@ -49,9 +49,9 @@ function mainStoreReducer(state = {}, action) {
           from: users.BOT,
           time: Date.now(),
         }),
-        // payloads: {
-        //   botOutput: { message: j[0][0].pred_score }
-        // },
+        payloads: _.merge({}, state.payloads, {
+          botOutput: { message: JSON.stringify(j, null, 2) }
+        }),
         lastUpdated: Date.now(),
       });
     case getFailure:

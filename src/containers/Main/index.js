@@ -29,7 +29,6 @@ class Main extends Component {
   render() {
     const { conversations, payloads } = this.props;
     const { userInput, botOutput } = payloads;
-
     return (
       <div style={{height:'100%', width:'100%'}}>
 
@@ -61,6 +60,12 @@ class Main extends Component {
 
           {/** Payload Column */}
           <div id="payload-column" className="fixed-column content-column">
+            <div className="header-text">Floyd Experiment</div>
+            <div className="code-line responsive-columns-wrapper">
+              <pre className="payload-text responsive-column">
+                <a href="https://beta.floydhub.com/experiments/K8zywPacXKtjapysHPiiRE" target="_blank">https://beta.floydhub.com/experiments/K8zywPacXKtjapysHPiiRE</a>
+              </pre>
+            </div>
             {/** Payload Request */}
             <div id="payload-request" className="payload">
               <div className="header-text">User Input</div>
@@ -76,6 +81,13 @@ class Main extends Component {
             {/** Payload Response */}
             <div id="payload-response" className="payload">
               <div className="header-text">Model Output</div>
+              <div className="code-line responsive-columns-wrapper">
+                <pre className="line-numbers">
+                </pre>
+                <pre className="payload-text responsive-column">
+                  {botOutput.message}
+                </pre>
+              </div>
             </div>
           </div>
 
