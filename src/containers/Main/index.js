@@ -19,11 +19,23 @@ const contextTypes = {
 class Main extends Component {
   constructor(props) {
     super(props);
+
+    this.handleChatInput = this.handleChatInput.bind(this);
+    this.scrollToBottom = this.scrollToBottom.bind(this);
+  }
+
+  componentDidUpdate() {
+    this.scrollToBottom(); // Scroll to bottom of chat window on each conv update
   }
 
   handleChatInput(data, dispatch) {
     dispatch(reset('chatInputForm')); // Reset the chat input text
     dispatch(fetch(data.search, true));
+  }
+
+  scrollToBottom(){
+    var element = document.getElementById("scrollingChat");
+    element.scrollTop = element.scrollHeight;
   }
 
   render() {
